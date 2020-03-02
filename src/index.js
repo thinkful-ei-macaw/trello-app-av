@@ -4,5 +4,7 @@ import App from './App';
 import './index.css';
 import STORE from './store';
 import Card from './Card';
+import List from './List.js';
 const card = STORE.allCards.a;
-ReactDOM.render(<Card title = {card.title} content = {card.content} />, document.getElementById('root'));
+
+ReactDOM.render(<List />, document.getElementById('root'));
