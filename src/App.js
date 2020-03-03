@@ -1,5 +1,6 @@
 import React from 'react';
 import List from './List';
+import './app.css';
 
 function App(props) {
   const { lists, allCards } = props.store;

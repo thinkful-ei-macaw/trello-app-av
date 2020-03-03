@@ -1,4 +1,6 @@
 import React from 'react';
+import './card.css';
+
 
 
 function Card (props){
@@ -6,7 +8,7 @@ function Card (props){
     
     return(
         <section>
-            <div>
+            <div className="Card">
                 <h3>{title}</h3>
                 <p>{content}</p>
             </div>

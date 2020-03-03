@@ -1,5 +1,6 @@
 import React from 'react';
 import Card from './Card.js';
+import './list.css';
 
 function List (props) {
   const { header, cards } = props;
@@ -15,7 +16,7 @@ function List (props) {
 
   return (
     <section className="List">
-      <header>{header}</header>
+      <header className="List-header"><h2>{header}</h2></header>
       <div className="List-cards">
         {cardValue}
       </div>
