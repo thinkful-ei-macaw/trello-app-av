@@ -1,15 +1,30 @@
 import React from 'react';
-//import './App.css';
+import List from './List';
 
+function App(props) {
+  const { lists, allCards } = props.store;
+  
+  const allLists = lists.map(list => {
+    const cards = list.cardIds.map(card => {
+      return allCards[card];
+    })
+    
+    return (
+      <List 
+        key={list.id} 
+        header={list.header} 
+        cards={cards}/>
+    )
+  })
 
-function App() {
   return (
     <main className='App'>
-      {/* content goes here */
-
-    
-      }
-      
+      <header className="App-header">
+        <h1>Trelloyes!</h1>
+      </header>
+      <div className="App-list">
+        {allLists}
+      </div>
     </main>
   );
 }

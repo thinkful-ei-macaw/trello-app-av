@@ -1,25 +1,17 @@
 import React from 'react';
 import Card from './Card.js';
-import STORE from './store.js';
 
 function List (props) {
-  const header = props.header;
-  const cards = props.cards;
-  let cardListKey = Object.keys(STORE.allCards)
-  console.log(cardListKey);
-  let cardListValue = [];
+  const { header, cards } = props;
   
-
-  for(let i =0; i < cardListKey.length; i++){
-    cardListValue.push(STORE.allCards[cardListKey[i]]);
-  }
-  console.log(cardListValue);
-  
-  
-  let cardValue =cardListValue.map(card => {
-    return <Card title={card.title} content={card.content}/>
+  let cardValue = cards.map(card => {
+    return (
+      <Card 
+        key={card.id} 
+        title={card.title} 
+        content={card.content}/>
+    )
   })
-console.log(cardValue);
 
   return (
     <section className="List">
@@ -31,5 +23,5 @@ console.log(cardValue);
   )
 }
 
-export default List
+export default List;
 
